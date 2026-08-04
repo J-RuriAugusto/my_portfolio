@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Playfair Display", "Cormorant Garamond", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* Light mode */
+  --color-bg: #F9F8FC;
+  --color-card: #FFFFFF;
+  --color-ink: #2A2338;
+  --color-ink-soft: #65597A;
+  --color-primary: #7E57C2;
+  --color-highlight: #B39DDB;
+  --color-line: #E6E1EC;
+
+  --animate-fall: fall linear infinite;
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-5vh) translateX(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: var(--petal-opacity, 0.8);
+    }
+    90% {
+      opacity: var(--petal-opacity, 0.8);
+    }
+    100% {
+      transform: translateY(105vh) translateX(var(--drift, 40px)) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.dark {
+  --color-bg: #131018;
+  --color-card: #1E1A26;
+  --color-ink: #F2EFEF;
+  --color-ink-soft: #C9BFE2;
+  --color-primary: #B39DDB;
+  --color-highlight: #D1C4E9;
+  --color-line: #31293F;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background-color: var(--color-highlight);
+  color: var(--color-bg);
+}
