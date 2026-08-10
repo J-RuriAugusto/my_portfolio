@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
-import { FiArrowUpRight, FiGithub } from "react-icons/fi";
+import { FiArrowUpRight, FiGithub, FiMaximize2 } from "react-icons/fi";
 import type { Project } from "../data/projects";
 
 interface ProjectCardProps {
   project: Project;
   index: number;
   inView: boolean;
+  onImageClick: (project: Project) => void;
 }
 
-export function ProjectCard({ project, index, inView }: ProjectCardProps) {
+export function ProjectCard({ project, index, inView, onImageClick }: ProjectCardProps) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 24 }}
@@ -17,16 +18,23 @@ export function ProjectCard({ project, index, inView }: ProjectCardProps) {
       whileHover={{ y: -6 }}
       className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-card transition-shadow hover:shadow-[0_20px_40px_-20px_var(--color-highlight)]"
     >
-      {/* Placeholder visual — swap for a real screenshot per project */}
-      <div
-        className="flex aspect-[16/10] items-center justify-center border-b border-line font-display text-2xl text-primary/70"
-        style={{
-          background:
-            "linear-gradient(135deg, color-mix(in srgb, var(--color-primary) 10%, var(--color-card)), color-mix(in srgb, var(--color-highlight) 16%, var(--color-card)))",
-        }}
+      <button
+        type="button"
+        onClick={() => onImageClick(project)}
+        aria-label={`View larger screenshot of ${project.name}`}
+        className="relative aspect-[16/10] w-full cursor-zoom-in overflow-hidden border-b border-line"
       >
-        {project.name}
-      </div>
+        <img
+          src={project.image}
+          alt={`${project.name} screenshot`}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <span className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/30 group-hover:opacity-100">
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-ink">
+            <FiMaximize2 size={16} />
+          </span>
+        </span>
+      </button>
 
       <div className="flex flex-1 flex-col p-6">
         <h3 className="font-display text-xl text-ink">{project.name}</h3>

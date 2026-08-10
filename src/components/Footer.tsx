@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="border-t border-line px-6 py-10 md:px-10">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 text-sm text-ink-soft sm:flex-row sm:justify-between">
-        <p>Made with care using React &amp; Tailwind</p>
+        <p>© 2026 Jamaica Ruri Augusto. All rights reserved. | Crafted with passion &amp; coffee.</p>
 
         <div className="flex items-center gap-5">
           <a

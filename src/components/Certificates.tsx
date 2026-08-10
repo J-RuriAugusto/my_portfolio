@@ -86,7 +86,7 @@ export function Certificates() {
                 type="button"
                 onClick={() => goTo(index - 1, -1)}
                 aria-label="Previous certificate"
-                className="absolute left-3 top-[38%] flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-card/90 text-ink-soft shadow-md backdrop-blur transition-colors hover:text-primary hover:border-primary sm:-left-15"
+                className="absolute left-3 top-[38%] flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-card/90 text-ink-soft shadow-md backdrop-blur transition-colors hover:text-primary hover:border-primary sm:-left-5"
               >
                 <FiChevronLeft size={18} />
               </button>
@@ -94,7 +94,7 @@ export function Certificates() {
                 type="button"
                 onClick={() => goTo(index + 1, 1)}
                 aria-label="Next certificate"
-                className="absolute right-3 top-[38%] flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-card/90 text-ink-soft shadow-md backdrop-blur transition-colors hover:text-primary hover:border-primary sm:-right-15"
+                className="absolute right-3 top-[38%] flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-card/90 text-ink-soft shadow-md backdrop-blur transition-colors hover:text-primary hover:border-primary sm:-right-5"
               >
                 <FiChevronRight size={18} />
               </button>

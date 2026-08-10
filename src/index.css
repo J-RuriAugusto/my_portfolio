@@ -17,6 +17,7 @@
 
   --animate-fall: fall linear infinite;
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-marquee: marquee 36s linear infinite;
 
   @keyframes fall {
     0% {
@@ -43,6 +44,16 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      /* Content is duplicated exactly once, so -50% is a seamless loop point */
+      transform: translateX(-50%);
     }
   }
 }

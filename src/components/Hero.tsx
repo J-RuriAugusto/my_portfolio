@@ -82,7 +82,7 @@ export function Hero() {
         <motion.a
           variants={item}
           href="#projects"
-          className="mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-medium text-white shadow-[0_8px_24px_-8px_var(--color-primary)] transition-transform hover:scale-[1.03] hover:shadow-[0_10px_28px_-6px_var(--color-primary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          className="mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-medium text-white shadow-[0_8px_24px_-8px_var(--color-primary)] transition-transform hover:scale-[1.03] hover:shadow-[0_10px_28px_-6px_var(--color-primary)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           View My Work
         </motion.a>
