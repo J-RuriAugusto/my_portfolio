@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { FiArrowDown } from "react-icons/fi";
 import { CherryBlossoms } from "./CherryBlossoms";
 import { PROFILE } from "../data/site";
-import profileImg from "../assets/images/profile.jpg";
+import profileImg from "../assets/images/logo-2.png";
 
 const container = {
   hidden: {},

@@ -27,7 +27,7 @@ export function Navbar() {
           className="font-display text-lg tracking-wide text-ink"
           aria-label="Jamaica Ruri Augusto — home"
         >
-          J<span className="text-primary">.</span>R.A
+          J<span className="text-primary">.</span>R<span className="text-primary">.</span>A
         </a>
 
         <div className="hidden items-center gap-8 md:flex">

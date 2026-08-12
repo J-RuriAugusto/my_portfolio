@@ -9,7 +9,7 @@ export const NAV_LINKS = [
 ] as const;
 
 export const PROFILE = {
-  name: "Jamaica Ruri C. Augusto",
+  name: "Jamaica Ruri Augusto",
   roles: ["Frontend Developer", "Web Developer", "Computer Science Graduate"],
   tagline:
     "I build web applications that pair clean design with practical, real-world functionality.",

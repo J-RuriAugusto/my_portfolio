@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence, type PanInfo } from "framer-motion";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+// import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { PROJECTS, type Project } from "../data/projects";
 import { ProjectCard } from "./ProjectCard";
 import { SectionTitle } from "./SectionTitle";
@@ -76,7 +76,7 @@ export function Projects() {
         </div>
 
         {/* Arrows */}
-        {pageCount > 1 && (
+        {/* {pageCount > 1 && (
           <>
             <button
               type="button"
@@ -95,7 +95,7 @@ export function Projects() {
               <FiChevronRight size={18} />
             </button>
           </>
-        )}
+        )} */}
 
         {/* Dots — one per page, not per project */}
         {pageCount > 1 && (

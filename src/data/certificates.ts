@@ -8,6 +8,20 @@ export interface Certificate {
 
 export const CERTIFICATES: Certificate[] = [
   {
+    id: "cert-6",
+    title: "Youth Bugsay Leadership",
+    issuer: "RAFI Center for Leaders",
+    date: "2021",
+    image: "/certificates/cert-6.png",
+  },
+  {
+    id: "cert-5",
+    title: "Google Cloud Badges",
+    issuer: "Google Cloud Pinas 2",
+    date: "2022",
+    image: "/certificates/cert-5.jpg",
+  },
+  {
     id: "cert-1",
     title: "Building Resilience",
     issuer: "LinkedIn Learning",
@@ -34,12 +48,5 @@ export const CERTIFICATES: Certificate[] = [
     issuer: "Project Management Institute",
     date: "2025",
     image: "/certificates/cert-4.jpg",
-  },
-  {
-    id: "cert-5",
-    title: "Google Cloud Badges",
-    issuer: "Google Cloud Pinas 2",
-    date: "2022",
-    image: "/certificates/cert-5.jpg",
   },
 ];

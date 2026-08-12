@@ -11,14 +11,14 @@ export function About() {
 
   return (
     <section id="about" className="mx-auto max-w-6xl px-6 py-28 md:px-10">
-      <SectionTitle eyebrow="About" title="A bit about me" />
+      <SectionTitle eyebrow="About" title="My journey" />
 
       <div ref={ref} className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl border border-line bg-card"
+          className="relative mx-auto aspect-4/5 w-full max-w-sm overflow-hidden rounded-2xl border border-line bg-card"
         >
           <img src={profileImg} alt={PROFILE.name} className="h-full w-full object-cover" />
           <div

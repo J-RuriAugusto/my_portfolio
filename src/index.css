@@ -3,17 +3,17 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-display: "Playfair Display", "Cormorant Garamond", serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-display: "IBM Plex Serif", serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
 
   /* Light mode */
   --color-bg: #F9F8FC;
-  --color-card: #FFFFFF;
-  --color-ink: #2A2338;
-  --color-ink-soft: #65597A;
-  --color-primary: #7E57C2;
-  --color-highlight: #B39DDB;
-  --color-line: #E6E1EC;
+  --color-card: #DED9F6;
+  --color-ink: #592986;
+  --color-ink-soft: #6D4696;
+  --color-primary: #8058AC;
+  --color-highlight: #A083C9;
+  --color-line: #C3B4E5;
 
   --animate-fall: fall linear infinite;
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;

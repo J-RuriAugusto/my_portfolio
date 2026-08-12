@@ -1,9 +1,5 @@
 export interface TechSkill {
   name: string;
-  /**
-   * Path to the logo image. Drop the file into `public/logos/` and
-   * reference it here as `/logos/filename.svg` — no import needed.
-   */
   logo: string;
 }
 
