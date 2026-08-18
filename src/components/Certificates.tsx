@@ -33,7 +33,7 @@ export function Certificates() {
 
   return (
     <section id="certificates" className="mx-auto max-w-4xl px-6 py-28 md:px-10">
-      <SectionTitle eyebrow="Certificates" title="Credentials & Training" align="center" />
+      <SectionTitle title="Certificates" align="center" />
 
       <div
         ref={ref}
@@ -60,7 +60,7 @@ export function Certificates() {
                 onDragEnd={handleDragEnd}
                 className="cursor-grab active:cursor-grabbing"
               >
-                <div className="flex aspect-[4/3] items-center justify-center bg-bg sm:aspect-[16/10]">
+                <div className="flex aspect-4/3 items-center justify-center bg-bg sm:aspect-16/10">
                   <img
                     src={current.image}
                     alt={`${current.title} — ${current.issuer}`}

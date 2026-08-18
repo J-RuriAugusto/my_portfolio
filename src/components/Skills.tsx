@@ -8,7 +8,7 @@ export function Skills() {
   return (
     <section id="skills" className="py-28">
       <div className="mx-auto max-w-6xl px-6 md:px-10">
-        <SectionTitle eyebrow="Skills" title="What I work with" align="center" />
+        <SectionTitle title="Tech Stack" align="center" />
       </div>
 
       <div

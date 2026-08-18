@@ -11,7 +11,7 @@ export const EXPERIENCE: TimelineEntry[] = [
     title: "Software Engineer Intern",
     org: "Pixel8 Web Solutions and Consultancy Inc.",
     description:
-      "Built and shipped frontend features in a production codebase, working directly with senior engineers on real client requirements and code review.",
+      "Supported the software development lifecycle by fixing bugs, automated testing applications, and maintaining project documentation. Demonstrated strong analytical, communication, and teamwork skills while adapting quickly to new technologies and development tools.",
   },
   {
     year: "2026",

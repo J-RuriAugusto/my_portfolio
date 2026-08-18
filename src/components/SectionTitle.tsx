@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { useInView } from "../hooks/useInView";
 
 interface SectionTitleProps {
-  eyebrow: string;
+  // eyebrow: string;
   title: string;
   align?: "left" | "center";
 }
 
-export function SectionTitle({ eyebrow, title, align = "left" }: SectionTitleProps) {
+export function SectionTitle({ title, align = "left" }: SectionTitleProps) {
   const { ref, inView } = useInView<HTMLDivElement>();
 
   return (
@@ -20,8 +20,8 @@ export function SectionTitle({ eyebrow, title, align = "left" }: SectionTitlePro
         transition: "opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1)",
       }}
     >
-      <span className="mb-2 text-xs uppercase tracking-[0.3em] text-primary">{eyebrow}</span>
-      <h2 className="font-display text-3xl text-ink sm:text-4xl">{title}</h2>
+      {/* <span className="mb-2 text-xs uppercase tracking-[0.3em] text-primary">{eyebrow}</span> */}
+      <h2 className="text-3xl uppercase tracking-[0.3em] text-primary sm:text-4xl">{title}</h2>
       <motion.span
         initial={{ scaleX: 0 }}
         animate={{ scaleX: inView ? 1 : 0 }}

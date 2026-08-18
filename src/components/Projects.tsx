@@ -44,7 +44,7 @@ export function Projects() {
 
   return (
     <section id="projects" className="mx-auto max-w-6xl px-6 py-28 md:px-10">
-      <SectionTitle eyebrow="Projects" title="All the work I've done / been included." />
+      <SectionTitle title="Projects" align="center" />
 
       <div ref={ref} className="relative">
         <div className="-m-10 overflow-hidden p-10">

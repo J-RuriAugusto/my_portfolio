@@ -1,29 +1,54 @@
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiCheck, FiSend } from "react-icons/fi";
+import emailjs from "@emailjs/browser";
+import { FiAlertCircle, FiCheck, FiSend } from "react-icons/fi";
 import { SectionTitle } from "./SectionTitle";
 import { useInView } from "../hooks/useInView";
 
-type Status = "idle" | "sending" | "sent";
+type Status = "idle" | "sending" | "sent" | "error";
 
 const inputClasses =
   "w-full rounded-xl border border-line bg-card px-4 py-3 text-sm text-ink placeholder:text-ink-soft/60 transition-colors focus:border-primary focus:outline-none";
 
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
 export function Contact() {
   const { ref, inView } = useInView<HTMLDivElement>(0.2);
+  const formRef = useRef<HTMLFormElement>(null);
+  const timeRef = useRef<HTMLInputElement>(null);
   const [status, setStatus] = useState<Status>("idle");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // No backend per the challenge brief — this simulates a send.
-    // To wire up real delivery later, swap this for an EmailJS call.
+    if (!formRef.current) return;
+
+    // The template's {{time}} variable isn't auto-filled by EmailJS —
+    // stamp it right before sending.
+    if (timeRef.current) {
+      timeRef.current.value = new Date().toLocaleString("en-US", {
+        dateStyle: "medium",
+        timeStyle: "short",
+      });
+    }
+
     setStatus("sending");
-    window.setTimeout(() => setStatus("sent"), 900);
+    try {
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, {
+        publicKey: PUBLIC_KEY,
+      });
+      setStatus("sent");
+      formRef.current.reset();
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setStatus("error");
+    }
   }
 
   return (
     <section id="contact" className="mx-auto max-w-2xl px-6 py-28 md:px-10">
-      <SectionTitle eyebrow="Contact" title="Let's talk" align="center" />
+      <SectionTitle title="Contact" align="center" />
 
       <div ref={ref} className="relative">
         <AnimatePresence mode="wait">
@@ -53,6 +78,7 @@ export function Contact() {
           ) : (
             <motion.form
               key="form"
+              ref={formRef}
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               exit={{ opacity: 0, y: -12 }}
@@ -60,6 +86,9 @@ export function Contact() {
               onSubmit={handleSubmit}
               className="flex flex-col gap-5"
             >
+              {/* Filled in JS right before sending — matches {{time}} in the template */}
+              <input type="hidden" name="time" ref={timeRef} />
+
               <div>
                 <label htmlFor="name" className="mb-1.5 block text-xs uppercase tracking-[0.15em] text-ink-soft">
                   Name
@@ -87,6 +116,13 @@ export function Contact() {
                   className={`${inputClasses} resize-none`}
                 />
               </div>
+
+              {status === "error" && (
+                <p className="flex items-center gap-2 text-sm text-red-500">
+                  <FiAlertCircle size={15} />
+                  Something went wrong — please try again, or email me directly.
+                </p>
+              )}
 
               <button
                 type="submit"

@@ -9,7 +9,7 @@ function TimelineItem({ entry, index }: { entry: (typeof EXPERIENCE)[number]; in
   return (
     <div ref={ref} className="relative pb-12 pl-10 last:pb-0">
       {/* Connecting line */}
-      <span className="absolute left-[7px] top-2 h-full w-px bg-line" aria-hidden="true" />
+      <span className="absolute left-1.75 top-2 h-full w-px bg-line" aria-hidden="true" />
 
       {/* Node */}
       <motion.span
@@ -36,7 +36,7 @@ function TimelineItem({ entry, index }: { entry: (typeof EXPERIENCE)[number]; in
 export function Timeline() {
   return (
     <section id="experience" className="mx-auto max-w-6xl px-6 py-28 md:px-10">
-      <SectionTitle eyebrow="Experience" title="Where I've spent my time" />
+      <SectionTitle title="Experience" align="center" />
       <div className="mt-4">
         {EXPERIENCE.map((entry, i) => (
           <TimelineItem key={`${entry.year}-${entry.title}`} entry={entry} index={i} />
