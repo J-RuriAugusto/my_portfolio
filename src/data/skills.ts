@@ -16,6 +16,7 @@ export const SKILLS: TechSkill[] = [
   { name: "Node.js", logo: "/logos/nodejs.png" },
   { name: "MySQL", logo: "/logos/mysql.svg" },
   { name: "Expo Go", logo: "/logos/expo.png" },
+  { name: "Git", logo: "/logos/git.png" },
   { name: "GitHub", logo: "/logos/github.svg" },
   { name: "Figma", logo: "/logos/figma.png" },
   { name: "WordPress", logo: "/logos/wordpress.png" },

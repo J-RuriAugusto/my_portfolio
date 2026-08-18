@@ -41,7 +41,7 @@ export function About() {
             I'm a Computer Science graduate from UP Cebu, and most of what I know about
             building software I picked up by actually shipping things — a case-tracking system for
             the Commission on Human Rights, a pharmacy inventory tool for my thesis, a
-            structural-inspection app that uses , Gemini for reports, and computer vision to flag
+            structural-inspection app that uses AR, Gemini for reports, and computer vision to flag
             building damage, and a dashboard forecasting power demand across the Visayas. I like frontend and
             UI/UX most, but I don't mind crossing into backend or data work when a project calls for it.
           </p>

@@ -17,16 +17,10 @@ const item = {
 };
 
 export function Hero() {
-  // const initials = PROFILE.name
-  //   .split(" ")
-  //   .map((n) => n[0])
-  //   .join("")
-  //   .slice(0, 2);
-
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-bg px-6"
+      className="relative flex min-h-dvh items-center justify-center overflow-hidden bg-bg px-6 py-20"
     >
       {/* Ambient gradient wash, deepest at the bottom */}
       <div
@@ -47,25 +41,29 @@ export function Hero() {
       >
         <motion.div
           variants={item}
-          className="mb-8 h-28 w-28 overflow-hidden rounded-full border border-line shadow-[0_0_0_6px_color-mix(in_srgb,var(--color-highlight)_14%,transparent)] sm:h-32 sm:w-32"
+          className="mb-6 h-24 w-24 overflow-hidden rounded-full border border-line shadow-[0_0_0_6px_color-mix(in_srgb,var(--color-highlight)_14%,transparent)] sm:mb-8 sm:h-28 sm:w-28 md:h-32 md:w-32"
         >
-          <img src={profileImg} alt={PROFILE.name} className="h-full w-full object-cover" />
+          <img
+            src={profileImg}
+            alt={PROFILE.name}
+            className="h-full w-full object-cover"
+          />
         </motion.div>
 
-        <motion.p variants={item} className="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
+        <motion.p variants={item} className="mb-2 text-xs uppercase tracking-[0.3em] text-primary sm:mb-3">
           Portfolio
         </motion.p>
 
         <motion.h1
           variants={item}
-          className="font-display text-4xl leading-tight text-ink sm:text-5xl md:text-6xl"
+          className="font-display text-3xl leading-tight text-ink sm:text-5xl md:text-6xl"
         >
           {PROFILE.name}
         </motion.h1>
 
         <motion.div
           variants={item}
-          className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-ink-soft sm:text-base"
+          className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-ink-soft sm:mt-5 sm:text-base"
         >
           {PROFILE.roles.map((role, i) => (
             <span key={role} className="flex items-center gap-3">
@@ -75,14 +73,14 @@ export function Hero() {
           ))}
         </motion.div>
 
-        <motion.p variants={item} className="mt-6 max-w-md text-sm leading-relaxed text-ink-soft sm:text-base">
+        <motion.p variants={item} className="mt-5 max-w-md text-sm leading-relaxed text-ink-soft sm:mt-6 sm:text-base">
           {PROFILE.tagline}
         </motion.p>
 
         <motion.a
           variants={item}
           href="#projects"
-          className="mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-medium text-white shadow-[0_8px_24px_-8px_var(--color-primary)] transition-transform hover:scale-[1.03] hover:shadow-[0_10px_28px_-6px_var(--color-primary)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-medium text-white shadow-[0_8px_24px_-8px_var(--color-primary)] transition-transform hover:scale-[1.03] hover:shadow-[0_10px_28px_-6px_var(--color-primary)] focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary sm:mt-10"
         >
           View My Work
         </motion.a>
@@ -93,7 +91,7 @@ export function Hero() {
         aria-label="Scroll to About section"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-ink-soft transition-colors hover:text-primary"
+        className="absolute bottom-4 left-1/2 z-10 -translate-x-1/2 text-ink-soft transition-colors hover:text-primary sm:bottom-8"
       >
         <FiArrowDown size={18} />
       </motion.a>
